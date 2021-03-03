@@ -1,0 +1,22 @@
+.address {
+  position: absolute;
+  top: 51px;
+  left: 0;
+}
+
+.address__item,
+.address__link {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+}
+
+.address__item {
+  color: var(--primary-white-color);
+}
+
+.address__link {
+  color: rgba(255, 255, 255, 0.6);
+}
