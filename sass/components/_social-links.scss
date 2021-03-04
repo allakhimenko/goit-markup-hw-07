@@ -4,8 +4,10 @@
   padding: 0;
 }
 
-.social-links__item:not(:last-child) {
-  margin-right: 10px;
+.social-links__item {
+  &:not(:last-child) {
+    margin-right: 10px;
+  }
 }
 
 .social-links__link {

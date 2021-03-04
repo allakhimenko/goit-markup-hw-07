@@ -58,8 +58,10 @@
   background: rgba(33, 150, 243, 0.9);
 }
 
-.project__link:hover .project__text {
-  transform: translateY(0);
+.project__link {
+  &:hover .project__text {
+    transform: translateY(0);
+  }
 }
 
 .project__meta {

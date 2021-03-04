@@ -5,8 +5,10 @@
   margin: 0;
 }
 
-.portfolio__item:not(:last-child) {
-  margin-right: 8px;
+.portfolio__item {
+  &:not(:last-child) {
+    margin-right: 8px;
+  }
 }
 
 .portfolio__button {

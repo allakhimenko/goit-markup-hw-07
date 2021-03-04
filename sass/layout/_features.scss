@@ -20,8 +20,10 @@
   justify-content: space-between;
 }
 
-.features__item:not(:last-child) {
-  margin-right: 30px;
+.features__item {
+  .features__item:not(:last-child) {
+    margin-right: 30px;
+  }
 }
 
 .features__icon {

@@ -10,9 +10,10 @@
   margin-top: 0;
   margin-bottom: 0;
 }
-
-.clients__item:not(:last-child) {
-  margin-right: 30px;
+.clients__item {
+  &:not(:last-child) {
+    margin-right: 30px;
+  }
 }
 
 .clients__link {

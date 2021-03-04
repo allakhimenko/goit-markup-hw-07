@@ -10,8 +10,7 @@
   color: var(--primary-text-color);
 }
 
-.form__input,
-.form__textarea {
+.form__input {
   display: block;
   height: 40px;
   width: 100%;
@@ -25,20 +24,34 @@
 
   transition: outline 250ms cubic-bezier(0.4, 0, 0.2, 1),
     border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:focus {
+    outline: none;
+    border: 1px solid var(--accent-color);
+  }
 }
 
 .form__textarea {
+  display: block;
   height: 120px;
+  width: 100%;
   padding: 12px 16px;
   margin-bottom: 20px;
   resize: none;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+
+  transition: outline 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   font-size: 12px;
   line-height: 1.67;
   letter-spacing: 0.01em;
   color: rgba(117, 117, 117, 0.5);
 
-  .form__input:focus,
   &:focus {
     outline: none;
     border: 1px solid var(--accent-color);
@@ -83,43 +96,25 @@
   overflow: hidden;
   border: 0;
   clip: rect(0 0 0 0);
+
+  &:checked + .form__label--checkbox::before {
+    /*Активный чекбокс*/
+    background-color: var(--accent-color);
+    background-image: url(../images/icon-check.svg);
+    background-repeat: no-repeat;
+    background-origin: border-box;
+    background-position: center;
+    background-size: cover;
+    border: 2px solid var(--accent-color);
+  }
+
+  &:focus + .form__label--checkbox::before {
+    /*Чекбокс при фокусе - синяя рамка*/
+    border: 2px solid var(--accent-color);
+  }
 }
 
-.form__label--checkbox::before {
-  /*Неактивный чекбокс - темная рамка*/
-  display: inline-block;
-  content: " ";
-  width: 16px;
-  height: 15px;
-  margin-right: 8.4px;
-
-  background-color: transparent;
-  border: 2px solid var(--title-text-color);
-  border-radius: 1px;
-  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  cursor: pointer;
-}
-
-.form__input--checkbox:checked + .form__label--checkbox::before {
-  /*Активный чекбокс*/
-  background-color: var(--accent-color);
-  background-image: url(../images/icon-check.svg);
-  background-repeat: no-repeat;
-  background-origin: border-box;
-  background-position: center;
-  background-size: cover;
-  border: 2px solid var(--accent-color);
-}
-
-.form__input--checkbox:focus + .form__label--checkbox::before {
-  /*Чекбокс при фокусе - синяя рамка*/
-  border: 2px solid var(--accent-color);
-}
-
-.form__label--checkbox,
-.form__link {
-  /*Оформление текста*/
+.form__label--checkbox {
   display: flex;
   align-items: center;
   font-style: normal;
@@ -129,10 +124,34 @@
   letter-spacing: 0.03em;
   color: var(--primary-text-color);
   cursor: pointer;
+
+  &::before {
+    display: inline-block;
+    content: " ";
+    width: 16px;
+    height: 15px;
+    margin-right: 8.4px;
+
+    background-color: transparent;
+    border: 2px solid var(--title-text-color);
+    border-radius: 1px;
+    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+  }
 }
 
 .form__link {
-  /*Оформление ссылки*/
+  display: flex;
+  align-items: center;
+
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71px;
+  letter-spacing: 0.03em;
+  color: var(--primary-text-color);
+  cursor: pointer;
   text-decoration: underline;
   color: var(--accent-color);
 }
