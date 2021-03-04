@@ -320,7 +320,9 @@ a {
   position: relative;
   margin-left: auto;
   margin-right: auto;
-  max-width: 1170px;
+  max-width: 1200px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .logo {
@@ -1164,7 +1166,7 @@ a {
 .page-footer--right {
   position: absolute;
   top: 0;
-  right: 0px;
+  right: 15px;
   margin-top: 72px;
 }
 
